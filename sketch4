@@ -1,0 +1,50 @@
+void setup (){
+  size (720, 720);
+  ellipseMode (RADIUS);
+  x1pos = width/2;
+  x2pos = width/2;
+  y1pos= height/2;
+  y2pos=height/2;
+}
+
+int x=0;
+int rad=60;
+float x1pos, y1pos;
+float x2pos, y2pos;
+
+float x1speed= 2.0;
+float x2speed= 2.0;
+float y1speed= 1.8;
+float y2speed=1.8;
+
+int x1direction=1;
+int x2direction=2;
+int y1direction=1;
+int y2direction=2;
+
+
+void draw(){
+  background (360);
+  noStroke ();
+  colorMode (HSB, 360, 100, 100);
+  x1pos= x1pos + (x1speed * x1direction);
+  y1pos = y1pos + (y1speed * y1direction);
+  if (x1pos > width-rad || x1pos <rad){
+    x1direction*=-1;
+  }
+  if (y1pos > height-rad || y1pos<rad){
+    y1direction*=-1;
+  }
+  fill (170,100, 100); // i wasnt able to put random colors cuz they keep changing in every move of the bounce
+  ellipse (x1pos, y1pos, rad, rad);
+  x2pos= x2pos + (x2speed * x2direction);
+  y2pos = y2pos + (y2speed * y2direction);
+  if (x2pos > width-rad || x2pos <rad){
+    x2direction*=-1;
+  }
+  if (y2pos > height-rad || y2pos<rad){
+    y2direction*=-1;
+  }
+  fill (30,100, 100);
+  ellipse (y2pos, x2pos, rad, rad);
+}
