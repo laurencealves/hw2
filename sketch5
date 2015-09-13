@@ -1,0 +1,19 @@
+background (100);
+size (720, 720);
+
+int x=20; 
+int y=20;
+
+for (x=20; x<700; x++){
+  noStroke ();
+  fill (255,255,255);
+  rect (x,20, 5, 675);
+  x=x+15;
+}
+
+for (y=20; y<700; y++){
+  noStroke ();
+  fill (255,255,255);
+  rect (20,y, 677, 5);
+  y=y+15;
+}
